@@ -25,7 +25,7 @@ for index, row in df.iterrows():
     mail.SentOnBehalfOfName = "myemail@mail.com"
     mail.Subject = "Email Subject Here"
 
-    # Let Outlook insert the signature with images/links
+    # Let Outlook insert the signature
     mail.GetInspector  # Loads default signature
     signature = mail.HTMLBody
     mail.HTMLBody = f"""<p>Dear {name},</p>
