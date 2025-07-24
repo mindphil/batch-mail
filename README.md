@@ -5,4 +5,4 @@ This script reads email data from an Excel spreadsheet using pandas, extracting 
 ### Useage
 After configuration, run from any terminal or active environment:
 ```bash
-python send_emails.py
+python program.py
