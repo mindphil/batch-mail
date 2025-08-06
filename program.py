@@ -2,7 +2,10 @@ import pandas as pd
 import win32com.client as win32
 import os
 
+# Load your Excel file
 df = pd.read_excel(r'Documents\Email List.xlsx')
+
+# Start Outlook
 outlook = win32.Dispatch('outlook.application')
 
 for index, row in df.iterrows():
@@ -21,7 +24,9 @@ for index, row in df.iterrows():
     mail.CC = f"address1@email.com; ...; {cc}"
     mail.SentOnBehalfOfName = "myemail@mail.com"
     mail.Subject = "Email Subject Here"
-    mail.GetInspector
+
+    # Let Outlook insert the signature with images/links
+    mail.GetInspector  # Loads default signature
     signature = mail.HTMLBody
     mail.HTMLBody = f"""<p>Dear {name},</p>
 <p>Thank you for trying out my program! Attached, you'll find whatever attachment you linked in the spreadhseet, have a good one.</p>
